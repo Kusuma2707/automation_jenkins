@@ -3,11 +3,11 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
-                git 'https://github.com/Kusuma2707/automation_jenkins.git'
+    steps {
+        git branch: 'devlop', url: 'https://github.com/Kusuma2707/automation_jenkins.git'
+    }
+}
 
-            }
-        }
 
         stage('Build') {
             steps {
