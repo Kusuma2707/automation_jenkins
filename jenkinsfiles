@@ -14,14 +14,14 @@ stage('Build') {
             }
         }
 
-        stage('Docker Build') {
+        /* stage('Docker Build') {
             steps {
                 sh '''
                     docker build -t $DOCKER_IMAGE .
                     docker images | grep myapp
                 '''
             }
-        }
+        } */
 
         stage('Deploy') {
             when {
