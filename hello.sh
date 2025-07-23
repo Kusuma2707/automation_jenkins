@@ -1,6 +1,5 @@
 #!/bin/bash
 #include <stdio.h>
-
 int main() {
     int a = 5, b = 10, temp;
 
@@ -15,6 +14,3 @@ int main() {
 
     return 0;
 }
-
-echo "Hello   from GitHub to Jenkins!"
-
