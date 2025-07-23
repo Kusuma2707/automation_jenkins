@@ -28,7 +28,7 @@ stage('Build') {
                 branch 'main'
             }
             steps {
-                echo 'Deploying to production .'
+                echo 'Deploying to production'
                 // Add real deploy command here
             }
         } */
