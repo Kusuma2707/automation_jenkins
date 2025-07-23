@@ -7,13 +7,41 @@ pipeline {
         git branch: 'devlop', url: 'https://github.com/Kusuma2707/automation_jenkins.git'
     }
 }
-
-
-        stage('Build') {
+stage('Build') {
             steps {
-                sh 'chmod +x hello.sh'
-                sh './hello.sh'
+                sh 'mvn clean install'
             }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh '''
+                    docker build -t $DOCKER_IMAGE .
+                    docker images | grep myapp
+                '''
+            }
+        }
+
+        stage('Deploy') {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo 'Deploying to production...'
+                // Add real deploy command here
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished'
+        }
+        success {
+            echo 'Build succeeded'
+        }
+        failure {
+            echo 'Build failed'
         }
     }
 }
