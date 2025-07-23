@@ -23,7 +23,7 @@ stage('Build') {
             }
         } */
 
-        stage('Deploy') {
+       /* stage('Deploy') {
             when {
                 branch 'main'
             }
@@ -31,7 +31,7 @@ stage('Build') {
                 echo 'Deploying to production...'
                 // Add real deploy command here
             }
-        }
+        } */
     }
 
     post {
