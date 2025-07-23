@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Kusuma2707/automation_jenkins.git'
+                git 'https://github.com/Kusuma2707/automation_jenkins/tree/devlop'
             }
         }
 
