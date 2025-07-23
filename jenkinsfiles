@@ -34,7 +34,7 @@ stage('Build') {
         } */
     }
 
-    post {
+    /* post {
         always {
             echo 'Pipeline finished'
         }
@@ -44,5 +44,5 @@ stage('Build') {
         failure {
             echo 'Build failed'
         }
-    }
+    } */
 }
