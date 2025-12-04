@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Hello automation from GitHub to Jenkins"
+
+=======
+echo "hiii"
+
