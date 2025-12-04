@@ -3,17 +3,36 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
-                git 'https://github.com/Kusuma2707/automation_jenkins.git'
-
-            }
-        }
-
-        stage('Build') {
+    steps {
+        git branch: 'devlop', url: 'https://github.com/Kusuma2707/automation_jenkins.git'
+    }
+}
+stage('Build') {
             steps {
                 sh 'chmod +x hello.sh'
                 sh './hello.sh'
             }
         }
+
+        /* stage('Docker Build') {
+            steps {
+                sh '''
+                    docker build -t $DOCKER_IMAGE .
+                    docker images | grep myapp
+                '''
+            }
+        } */
+
+       /* stage('Deploy') {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo 'Deploying to production..'
+                // Add real deploy command here
+            }
+        } */
     }
+
+
 }
