@@ -18,13 +18,12 @@ jobs:
         run: |
           echo "Running Build Stage..."
           chmod +x *.sh
-
       - name: Run hello.sh
         run: ./hello.sh
 
   test:
     runs-on: ubuntu-latest
-    needs: build     # Runs after build job
+    needs: build
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -32,11 +31,12 @@ jobs:
       - name: Test Stage
         run: |
           echo "Running Test Stage..."
-          ./hii.sh
-
+          chmod +x hii.sh      # ⭐ ADD THIS
+          ./hii.sh             # Run script
+          
   deploy:
     runs-on: ubuntu-latest
-    needs: test     # Runs after test job
+    needs: test
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
