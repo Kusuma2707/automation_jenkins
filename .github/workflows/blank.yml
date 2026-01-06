@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: 1st pipeline using actions
 
 on:
   push:
